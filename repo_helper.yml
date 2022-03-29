@@ -50,4 +50,5 @@ keywords:
  - documentation
 
 tox_unmanaged:
+ - check-wheel-contents
  - testenv
