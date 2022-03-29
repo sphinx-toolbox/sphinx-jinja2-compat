@@ -1,5 +1,5 @@
 [build-system]
-requires = [ "whey",]
+requires = [ "whey", "whey-pth",]
 build-backend = "whey"
 
 [project]
@@ -7,8 +7,9 @@ name = "sphinx-jinja2-compat"
 version = "0.0.0"
 description = "Patches Jinja2 v3 to restore compatibility with earlier Sphinx versions."
 readme = "README.rst"
+requires-python = ">=3.6"
 keywords = [ "documentation", "jinja2", "sphinx",]
-dynamic = [ "requires-python", "classifiers", "dependencies",]
+dynamic = [ "classifiers", "dependencies",]
 
 [[project.authors]]
 name = "Dominic Davis-Foster"
@@ -35,16 +36,17 @@ base-classifiers = [
     "Topic :: Documentation :: Sphinx",
     "Topic :: Software Development :: Documentation",
 ]
-python-versions = [ "3.6", "3.7", "3.8", "3.9", "3.10", "3.11",]
+python-versions = [ "3.7", "3.8", "3.9", "3.10", "3.11",]
 python-implementations = [ "CPython", "PyPy",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
 package = "sphinx_jinja2_compat"
 
 [tool.importcheck]
+always = [ "sphinx_jinja2_compat",]
 
 [tool.mypy]
-python_version = "3.6"
+python_version = "3.7"
 namespace_packages = true
 check_untyped_defs = true
 warn_unused_ignores = true
@@ -53,6 +55,13 @@ show_error_codes = true
 
 [tool.snippet-fmt]
 directives = [ "code-block",]
+
+[tool.whey-pth]
+name = "_sphinx_jinja2_compat"
+pth-content = "import sphinx_jinja2_compat"
+
+[tool.whey.builders]
+wheel = "whey_pth_wheel"
 
 [tool.dependency-dash."requirements.txt"]
 order = 10
