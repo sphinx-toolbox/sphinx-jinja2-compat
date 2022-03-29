@@ -34,7 +34,7 @@ __all__: List[str] = []
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2022 Dominic Davis-Foster"
 __license__: str = "MIT License"
-__version__: str = "0.0.0"
+__version__: str = "0.1.0"
 __email__: str = "dominic@davis-foster.co.uk"
 
 F = TypeVar('F', bound=Callable[..., Any])
