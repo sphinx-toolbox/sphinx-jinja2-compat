@@ -68,6 +68,8 @@ if not hasattr(jinja2.utils, "contextfunction"):
 	def contextfunction(f: F) -> F:
 		return jinja2.utils.pass_context(f)
 
+	jinja2.utils.contextfunction = contextfunction  # type: ignore[attr-defined]
+	jinja2.contextfunction = contextfunction  # type: ignore[attr-defined]
 
 # This all has to be up here so it's triggered first.
 if sys.version_info >= (3, 10):
