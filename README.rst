@@ -87,7 +87,7 @@ sphinx-jinja2-compat
 .. |language| image:: https://img.shields.io/github/languages/top/sphinx-toolbox/sphinx-jinja2-compat
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-jinja2-compat/v0.1.1
+.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-jinja2-compat/v0.1.2
 	:target: https://github.com/sphinx-toolbox/sphinx-jinja2-compat/pulse
 	:alt: GitHub commits since tagged version
 
