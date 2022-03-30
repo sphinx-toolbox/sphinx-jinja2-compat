@@ -35,7 +35,7 @@ __all__: List[str] = []
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2022 Dominic Davis-Foster"
 __license__: str = "MIT License"
-__version__: str = "0.1.0"
+__version__: str = "0.1.1"
 __email__: str = "dominic@davis-foster.co.uk"
 
 F = TypeVar('F', bound=Callable[..., Any])
@@ -67,6 +67,7 @@ if not hasattr(jinja2.utils, "contextfunction"):
 
 	def contextfunction(f: F) -> F:
 		return jinja2.utils.pass_context(f)
+
 
 # This all has to be up here so it's triggered first.
 if sys.version_info >= (3, 10):
