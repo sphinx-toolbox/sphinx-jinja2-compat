@@ -8,6 +8,7 @@ sphinx-jinja2-compat
 
 .. end short_desc
 
+Also makes some Sphinx versions work correctly on Python 3.10.
 
 .. start shields
 
