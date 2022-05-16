@@ -27,8 +27,12 @@ Patches Jinja2 v3 to restore compatibility with earlier Sphinx versions.
 #
 
 # stdlib
+import os
 import sys
-from typing import Any, Callable, List, TypeVar
+from typing import List
+
+# this package
+from sphinx_jinja2_compat._installers import install_jinja2, install_markupsafe
 
 __all__: List[str] = []
 
@@ -38,41 +42,32 @@ __license__: str = "MIT License"
 __version__: str = "0.1.2"
 __email__: str = "dominic@davis-foster.co.uk"
 
-F = TypeVar('F', bound=Callable[..., Any])
+if "NO_SPHINX_JINJA2_COMPAT" not in os.environ:
 
-# 3rd party
-import markupsafe  # noqa: E402
+	if sys.version_info >= (3, 10):
+		# stdlib
+		import types
+		types.Union = types.UnionType
 
-if not hasattr(markupsafe, "soft_unicode"):
+	try:
 
-	def soft_unicode(s: Any) -> str:
-		return markupsafe.soft_str(s)
+		# 3rd party
+		import markupsafe
 
-	markupsafe.soft_unicode = soft_unicode  # type: ignore[attr-defined]
+		install_markupsafe(markupsafe)
 
-# 3rd party
-import jinja2  # noqa: E402
-import jinja2.filters  # noqa: E402
-import jinja2.utils  # noqa: E402
+		# 3rd party
+		import jinja2
+		import jinja2.filters
+		import jinja2.utils
 
-if not hasattr(jinja2.filters, "environmentfilter"):
+		install_jinja2(jinja2, jinja2.filters, jinja2.utils)
 
-	def environmentfilter(f: F) -> F:
-		return jinja2.utils.pass_environment(f)
+	except ImportError:
+		# Unable to import one module
+		# Perhaps they are in global site-packages and we're not,
+		# so they aren't available yet?
 
-	jinja2.filters.environmentfilter = environmentfilter  # type: ignore[attr-defined]
-	jinja2.environmentfilter = environmentfilter  # type: ignore[attr-defined]
-
-if not hasattr(jinja2.utils, "contextfunction"):
-
-	def contextfunction(f: F) -> F:
-		return jinja2.utils.pass_context(f)
-
-	jinja2.utils.contextfunction = contextfunction  # type: ignore[attr-defined]
-	jinja2.contextfunction = contextfunction  # type: ignore[attr-defined]
-
-# This all has to be up here so it's triggered first.
-if sys.version_info >= (3, 10):
-	# stdlib
-	import types
-	types.Union = types.UnionType
+		# this package
+		from sphinx_jinja2_compat._meta_path import _Finder
+		sys.meta_path.insert(0, _Finder())

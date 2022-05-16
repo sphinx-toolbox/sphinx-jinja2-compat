@@ -43,7 +43,12 @@ license-key = "MIT"
 package = "sphinx_jinja2_compat"
 
 [tool.importcheck]
-always = [ "sphinx_jinja2_compat",]
+always = [
+    "sphinx_jinja2_compat",
+    "sphinx_jinja2_compat._installers",
+    "sphinx_jinja2_compat._meta_path",
+    "test_imports",
+]
 
 [tool.mypy]
 python_version = "3.7"
@@ -59,6 +64,9 @@ directives = [ "code-block",]
 [tool.whey-pth]
 name = "_sphinx_jinja2_compat"
 pth-content = "import sphinx_jinja2_compat"
+
+[tool.dep_checker]
+allowed_unused = [ "jinja2", "markupsafe",]
 
 [tool.whey.builders]
 wheel = "whey_pth_wheel"
