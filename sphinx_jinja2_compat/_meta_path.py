@@ -68,7 +68,8 @@ class _Finder(importlib.abc.MetaPathFinder):
 						pass
 
 				return importlib.util.spec_from_loader(
-						"markupsafe", _MarkupsafeLoader(),
+						"markupsafe",
+						_MarkupsafeLoader(),
 						origin=markupsafe.__file__,
 						)
 
