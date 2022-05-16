@@ -27,6 +27,7 @@ Meta path finder and loader to install patched at import time.
 #
 
 # stdlib
+import importlib.abc
 import importlib.util
 import sys
 
@@ -66,7 +67,10 @@ class _Finder(importlib.abc.MetaPathFinder):
 					def exec_module(self, module):
 						pass
 
-				return importlib.util.spec_from_loader("markupsafe", _MarkupsafeLoader(), origin=markupsafe.__file__)
+				return importlib.util.spec_from_loader(
+						"markupsafe", _MarkupsafeLoader(),
+						origin=markupsafe.__file__,
+						)
 
 		elif fullname == "jinja2":
 
