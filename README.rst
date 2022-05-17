@@ -91,7 +91,7 @@ The patches can be disabled by setting the environment variable ``NO_SPHINX_JINJ
 .. |language| image:: https://img.shields.io/github/languages/top/sphinx-toolbox/sphinx-jinja2-compat
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-jinja2-compat/v0.2.0b1
+.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-jinja2-compat/v0.2.0
 	:target: https://github.com/sphinx-toolbox/sphinx-jinja2-compat/pulse
 	:alt: GitHub commits since tagged version
 
