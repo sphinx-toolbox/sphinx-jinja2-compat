@@ -42,8 +42,6 @@ class _Finder(importlib.abc.MetaPathFinder):
 		self._stack = []
 
 	def find_spec(self, fullname, path, target=None):
-		print(fullname)
-
 		if fullname in self._stack:
 			return None
 
