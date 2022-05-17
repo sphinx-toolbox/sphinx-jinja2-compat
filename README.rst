@@ -10,6 +10,9 @@ sphinx-jinja2-compat
 
 Also makes some Sphinx versions work correctly on Python 3.10.
 
+The patches can be disabled by setting the environment variable ``NO_SPHINX_JINJA2_COMPAT`` to ``1``. (v0.2.0 and newer only)
+
+
 .. start shields
 
 .. list-table::
