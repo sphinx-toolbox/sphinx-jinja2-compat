@@ -52,8 +52,8 @@ The patches can be disabled by setting the environment variable ``NO_SPHINX_JINJ
 	:target: https://github.com/sphinx-toolbox/sphinx-jinja2-compat/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-jinja2-compat/badge.svg
-	:target: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-jinja2-compat/
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/sphinx-toolbox/sphinx-jinja2-compat/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/sphinx-toolbox/sphinx-jinja2-compat/
 	:alt: Requirements Status
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/sphinx-toolbox/sphinx-jinja2-compat?logo=codefactor
