@@ -32,4 +32,4 @@ use_parentheses = true
 remove_redundant_aliases = true
 default_section = "THIRDPARTY"
 known_third_party = [ "jinja2", "markupsafe",]
-known_first_party = "sphinx_jinja2_compat"
+known_first_party = [ "sphinx_jinja2_compat",]
