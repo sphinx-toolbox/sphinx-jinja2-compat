@@ -78,7 +78,7 @@ name = "_sphinx_jinja2_compat"
 pth-content = "import sphinx_jinja2_compat"
 
 [tool.dep_checker]
-allowed_unused = [ "jinja2", "markupsafe",]
+allowed_unused = [ "jinja2", "markupsafe", "standard_imghdr",]
 
 [tool.dependency-dash."requirements.txt"]
 order = 10
