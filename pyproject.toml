@@ -26,6 +26,7 @@ Homepage = "https://github.com/sphinx-toolbox/sphinx-jinja2-compat"
 [tool.mkrecipe]
 conda-channels = [ "conda-forge", "domdfcoding",]
 extras = "all"
+max-python-version = 3.12
 
 [tool.whey]
 base-classifiers = [
