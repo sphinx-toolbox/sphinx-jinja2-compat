@@ -27,7 +27,7 @@ lines_between_types = 0
 use_parentheses = true
 remove_redundant_aliases = true
 default_section = "THIRDPARTY"
-known_third_party = [ "jinja2", "markupsafe",]
+known_third_party = [ "jinja2", "markupsafe", "standard_imghdr",]
 known_first_party = [ "sphinx_jinja2_compat",]
 
 [config]
