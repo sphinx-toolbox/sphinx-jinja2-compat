@@ -71,3 +71,13 @@ if "NO_SPHINX_JINJA2_COMPAT" not in os.environ:
 		# this package
 		from sphinx_jinja2_compat._meta_path import _Finder
 		sys.meta_path.insert(0, _Finder())
+
+	# Ensure sphinx_prompt can also be imported from sphinx-prompt
+	# (whether due to https://github.com/sbrunner/sphinx-prompt/issues/612
+	# or building from source or an eventual deliberate removal)
+	try:
+		import sphinx_prompt
+	except ImportError:
+		pass
+	else:
+		sys.modules["sphinx-prompt"] = sphinx_prompt

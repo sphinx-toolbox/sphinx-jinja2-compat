@@ -27,3 +27,5 @@ if sys.version_info >= (3, 10):
 	# stdlib
 	assert hasattr(types, "Union")
 	assert types.Union is types.UnionType
+
+__import__("sphinx-prompt")
