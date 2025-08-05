@@ -75,7 +75,13 @@ if "NO_SPHINX_JINJA2_COMPAT" not in os.environ:
 	# Ensure sphinx_prompt can also be imported from sphinx-prompt
 	# (whether due to https://github.com/sbrunner/sphinx-prompt/issues/612
 	# or building from source or an eventual deliberate removal)
+
+	if sys.version_info >= (3, 12):
+		# Ensure distutils is patched first
+		__import__("_distutils_hack").add_shim()
+
 	try:
+		# 3rd party
 		import sphinx_prompt
 	except ImportError:
 		pass
