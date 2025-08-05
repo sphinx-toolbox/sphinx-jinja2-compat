@@ -82,7 +82,7 @@ if "NO_SPHINX_JINJA2_COMPAT" not in os.environ:
 
 	try:
 		# 3rd party
-		import sphinx_prompt
+		import sphinx_prompt  # type: ignore[import]
 	except ImportError:
 		pass
 	else:
