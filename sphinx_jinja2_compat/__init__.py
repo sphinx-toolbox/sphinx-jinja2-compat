@@ -77,8 +77,11 @@ if "NO_SPHINX_JINJA2_COMPAT" not in os.environ:
 	# or building from source or an eventual deliberate removal)
 
 	if sys.version_info >= (3, 12):
-		# Ensure distutils is patched first
-		__import__("_distutils_hack").add_shim()
+		# Ensure distutils is patched first, if setuptools is installed
+		try:
+			__import__("_distutils_hack").add_shim()
+		except ImportError:
+			pass
 
 	try:
 		# 3rd party
