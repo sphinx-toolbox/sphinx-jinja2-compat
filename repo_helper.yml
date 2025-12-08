@@ -13,8 +13,6 @@ short_desc: "Patches Jinja2 v3 to restore compatibility with earlier Sphinx vers
 use_whey: true
 enable_docs: False
 enable_tests: False
-requires_python: 3.6
-python_deploy_version: 3.7
 
 conda_channels:
   - conda-forge
