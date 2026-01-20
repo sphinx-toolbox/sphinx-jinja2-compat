@@ -83,10 +83,10 @@ if "NO_SPHINX_JINJA2_COMPAT" not in os.environ:
 		except ImportError:
 			pass
 
-	try:
-		# 3rd party
-		import sphinx_prompt  # type: ignore[import-not-found]
-	except ImportError:
-		pass
-	else:
-		sys.modules["sphinx-prompt"] = sphinx_prompt
+	# try:
+	# 	# 3rd party
+	# 	import sphinx_prompt  # type: ignore[import-not-found]
+	# except ImportError:
+	# 	pass
+	# else:
+	# 	sys.modules["sphinx-prompt"] = sphinx_prompt
